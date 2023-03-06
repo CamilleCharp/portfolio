@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, spring } from "framer-motion";
+import { useEffect } from "react";
 import { cloneElement } from "react";
+import { useInView } from "react-intersection-observer";
 import styles from "./skill.module.scss";
 
 type Props = {
@@ -23,20 +24,17 @@ export function Skill({
   techTitle,
   techList,
 }: Props) {
+  const { ref, inView } = useInView({
+    onChange: (inView, entry) =>
+      inView && entry.target.classList.add(styles["skill--active"]),
+    triggerOnce: true,
+  });
   const StyledIcon = cloneElement(Icon, { className: styles.title__icon });
 
   return (
-    <motion.article
-      className={styles.skill}
-      initial={{
-        translateX: "-100%",
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-        translateX: 0,
-      }}
-      transition={spring}
+    <article
+      className={`${styles.skill} ${inView ? styles["skill--active"] : ""}`}
+      ref={ref}
     >
       <span className={styles.skill__title}>
         {StyledIcon}
@@ -65,6 +63,6 @@ export function Skill({
           ))}
         </ul>
       </section>
-    </motion.article>
+    </article>
   );
 }

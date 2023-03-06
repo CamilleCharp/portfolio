@@ -2,13 +2,14 @@
   width: 100%;
   height: max-content;
   display: flex;
+  transform: translateX(-100%);
   flex-direction: column;
   gap: 1rem;
   margin: 0 auto;
   padding: 1rem;
   color: var(--black);
   border-radius: 8px;
-  // will-change: transform;
+  transition-duration: 500ms;
   @apply border border-gray-300 max-w-sm;
 
   .skill__title {
@@ -61,4 +62,8 @@
     gap: 0.25rem;
     @apply text-sm font-medium;
   }
+}
+
+.skill--active {
+  transform: translateX(0);
 }
