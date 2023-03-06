@@ -31,14 +31,17 @@ export function Skill({
     <motion.article
       className={styles.skill}
       initial={{
+        willChange: "auto",
         translateX: even ? "-100%" : "100%",
         opacity: 0,
       }}
       whileInView={{
+        willChange: "transform",
         opacity: 1,
         translateX: 0,
       }}
       transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
     >
       <span className={styles.skill__title}>
         {StyledIcon}
