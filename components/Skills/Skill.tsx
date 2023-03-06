@@ -1,9 +1,11 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { cloneElement } from "react";
 import styles from "./skill.module.scss";
 
 type Props = {
+  even?: boolean;
   Icon: any;
   title: string;
   description: string;
@@ -14,6 +16,7 @@ type Props = {
 };
 
 export function Skill({
+  even = true,
   Icon,
   title,
   description,
@@ -25,7 +28,18 @@ export function Skill({
   const StyledIcon = cloneElement(Icon, { className: styles.title__icon });
 
   return (
-    <article className={styles.skill}>
+    <motion.article
+      className={styles.skill}
+      initial={{
+        translateX: even ? "-100%" : "100%",
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+        translateX: 0,
+      }}
+      transition={{ duration: 0.5 }}
+    >
       <span className={styles.skill__title}>
         {StyledIcon}
         <h1 className={styles.title__name}>{title}</h1>
@@ -53,6 +67,6 @@ export function Skill({
           ))}
         </ul>
       </section>
-    </article>
+    </motion.article>
   );
 }
