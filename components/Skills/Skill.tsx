@@ -1,11 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, spring } from "framer-motion";
 import { cloneElement } from "react";
 import styles from "./skill.module.scss";
 
 type Props = {
-  even?: boolean;
   Icon: any;
   title: string;
   description: string;
@@ -16,7 +15,6 @@ type Props = {
 };
 
 export function Skill({
-  even = true,
   Icon,
   title,
   description,
@@ -31,17 +29,14 @@ export function Skill({
     <motion.article
       className={styles.skill}
       initial={{
-        willChange: "auto",
-        translateX: even ? "-100%" : "100%",
+        translateX: "-100%",
         opacity: 0,
       }}
       whileInView={{
-        willChange: "transform",
         opacity: 1,
         translateX: 0,
       }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+      transition={spring}
     >
       <span className={styles.skill__title}>
         {StyledIcon}

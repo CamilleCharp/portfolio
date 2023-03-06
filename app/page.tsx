@@ -61,7 +61,6 @@ export default function Home() {
             "Styled Components",
             "Material UI",
           ]}
-          even={false}
         />
 
         <Skill
