@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  padding: 0.5rem;
+  z-index: 9998;
+  font-family: var(--font-header);
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.menu__button {
+  margin-left: auto;
+}
+
+.menu__icon {
+  width: 24px;
+}
