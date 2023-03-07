@@ -1,14 +1,15 @@
 import styles from "./page.module.scss";
 import Link from "next/link";
 
-import DesignIcon from "../public/design.svg";
-import ServerIcon from "../public/server.svg";
-import CodeIcon from "../public/code.svg";
+import DesignIcon from "@/public/design.svg";
+import ServerIcon from "@/public/server.svg";
+import CodeIcon from "@/public/code.svg";
 
 import { Roboto } from "next/font/google";
 import HomeSection from "@/components/Home";
-import { Skill } from "../components/Skills/Skill";
+import { Skill } from "@/components/Skills/Skill";
 import { Server } from "http";
+import { Project } from "@/components/Project/Project";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -79,6 +80,10 @@ export default function Home() {
             "Strapi",
           ]}
         />
+      </section>
+
+      <section>
+        <Project />
       </section>
     </>
   );
