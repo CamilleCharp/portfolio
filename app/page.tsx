@@ -12,6 +12,7 @@ import { Skill } from "@/components/Skills/Skill";
 import { Server } from "http";
 import { Project } from "@/components/Project/Project";
 import Image from "next/image";
+import { Contact } from "@/components/Contact/Contact";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -43,55 +44,64 @@ export default function Home() {
         </div>
       </section>
       <section className={`${styles.skills} ${roboto.variable}`} id="skills">
-        <h1 className={styles.skills__title}>What can I actually do ?</h1>
+        <div className={styles.skills__presentation}>
+          <h1 className={styles.skills__title}>What can I actually do ?</h1>
+          <span className={styles.skills__detail}>
+            Knowing the theory is good, but knowing how to use the right tool
+            for the right job is the most important part, here are the language,
+            concepts and tools I know how to use the best
+          </span>
+        </div>
 
-        <Skill
-          Icon={<DesignIcon />}
-          title="Design"
-          description="My goal is to make design focused on interactivity, readability and
+        <div className={styles.skills__list}>
+          <Skill
+            Icon={<DesignIcon />}
+            title="Design"
+            description="My goal is to make design focused on interactivity, readability and
             of course accessibility. All without sacrificing satisfying
             animations."
-          langTitle="What I like to design"
-          langList={["UI", "Animations", "Prototypes"]}
-          techTitle="Design tools"
-          techList={["Framer", "Figma", "Canva", "Font Awesome"]}
-        />
+            langTitle="What I like to design"
+            langList={["UI", "Animations", "Prototypes"]}
+            techTitle="Design tools"
+            techList={["Framer", "Figma", "Canva", "Font Awesome"]}
+          />
 
-        <Skill
-          Icon={<CodeIcon />}
-          title="Front-end"
-          description="I think a strong foundation is what make a website or application last in time"
-          langTitle="I fluently speak"
-          langList={["HTML", "CSS", "SCSS", "Javascript", "Typescript"]}
-          techTitle="Front techs I use"
-          techList={[
-            "React",
-            "NextJS (12 and 13)",
-            "Jest",
-            "Framer Motion",
-            "Styled Components",
-            "Material UI",
-          ]}
-        />
+          <Skill
+            Icon={<CodeIcon />}
+            title="Front-end"
+            description="I think a strong foundation is what make a website or application last in time"
+            langTitle="I fluently speak"
+            langList={["HTML", "CSS", "SCSS", "Javascript", "Typescript"]}
+            techTitle="Front techs I use"
+            techList={[
+              "React",
+              "NextJS (12 and 13)",
+              "Jest",
+              "Framer Motion",
+              "Styled Components",
+              "Material UI",
+            ]}
+          />
 
-        <Skill
-          Icon={<ServerIcon />}
-          title="Back-end"
-          description="Nowaday I mostly use node either with Express or more abstractly with Next Api routes. But I still enjoy using PHP and its clear structure"
-          langTitle="For my back-ends I speak"
-          langList={["PHP", "JS/TS", "Python"]}
-          techTitle="Techs I use"
-          techList={[
-            "Symfony (3 to 6)",
-            "Express",
-            "NextJS API",
-            "Next-auth",
-            "Prisma",
-            "Supabase",
-            "Wordpress",
-            "Strapi",
-          ]}
-        />
+          <Skill
+            Icon={<ServerIcon />}
+            title="Back-end"
+            description="Nowaday I mostly use node either with Express or more abstractly with Next Api routes. But I still enjoy using PHP and its clear structure"
+            langTitle="For my back-ends I speak"
+            langList={["PHP", "JS/TS", "Python"]}
+            techTitle="Techs I use"
+            techList={[
+              "Symfony (3 to 6)",
+              "Express",
+              "NextJS API",
+              "Next-auth",
+              "Prisma",
+              "Supabase",
+              "Wordpress",
+              "Strapi",
+            ]}
+          />
+        </div>
       </section>
 
       <section className={styles.projects} id="projects">
@@ -110,17 +120,7 @@ export default function Home() {
         />
       </section>
 
-      <section className={styles.contact} id="contact">
-        <p className={styles.contact__description}>
-          Do you have any question ? Would you like to work with me ?
-        </p>
-        <a
-          href="mailto:camille.charpentier77@gmail.com"
-          className={styles.contact__button}
-        >
-          Contact me
-        </a>
-      </section>
+      <Contact />
     </>
   );
 }

@@ -13,7 +13,7 @@
   --black: #171717;
   --gray: #a3a3a3;
 
-  --background: #262a33;
+  --background: #15202b;
 
   --text-display: "Roboto Slab", sans-serif, serif;
 }
@@ -31,7 +31,7 @@ html {
 body {
   width: 100%;
 
-  background-color: #262a33;
+  background-color: #15202b;
 }
 
 .text-display {

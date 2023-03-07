@@ -7,7 +7,7 @@
   gap: 1rem;
   margin: 0 auto;
   padding: 1rem;
-  color: var(--black);
+  color: var(--white);
   border-radius: 8px;
   transition-duration: 500ms;
   @apply border border-gray-300 max-w-md;
@@ -66,4 +66,48 @@
 
 .skill--active {
   transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .skill {
+    height: 30rem;
+    margin: 0;
+    @apply border border-gray-300;
+    &:first-child {
+      border-radius: 8px 0 0 8px;
+      border-right: none;
+      opacity: 0;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0;
+      transform: translateX(0) translateY(100%);
+      opacity: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 8px 8px 0;
+      border-left: none;
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .skill--active {
+    &:first-child {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0;
+      transform: translateX(0) translateY(0);
+      opacity: 1;
+    }
+
+    &:last-child {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
