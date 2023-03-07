@@ -21,18 +21,21 @@ export default function Home() {
   return (
     <>
       <HomeSection />
-      <section className={`${roboto.variable} ${styles.about}`}>
+      <section className={`${roboto.variable} ${styles.about}`} id="about">
         <h1 className={styles.about__title}>About me</h1>
 
         <p className={styles.about__presentation}>
-          {`Hello and welcome to my corner of the internet. I am Camille and I've passionate about software development and design for more than ten years, working on project for myself mostly. 
-        
-        Nowadays I'm a full stack web dev with 2 years of experience in the field, both in a company and as a freelance. I'm working mostly with React, Symfony and Wordpress but I'm always interested in discovering other technologies. 
-        
-        I am currently learning how to use Python and plan on learning C# in 2023.`}
+          {`Hello and welcome to my corner of the internet ! I am a fullstack freelance webdev from Brussels.
+
+          I aim to create website and webapp that are simple to use and maintain for both the final users and developpers. 
+
+          For that I made sure to understand how to design from the first idea scribbled on a piece of paper to the deepest nooks of a relational database.
+
+          This allows me to accompany you in your projects at every steps of your projects and make sure the product I deliver is as close as possible to your vision.
+          `}
         </p>
       </section>
-      <section className={`${styles.skills} ${roboto.variable}`}>
+      <section className={`${styles.skills} ${roboto.variable}`} id="skills">
         <h1 className={styles.skills__title}>What can I actually do ?</h1>
 
         <Skill
@@ -75,15 +78,41 @@ export default function Home() {
             "Symfony (3 to 6)",
             "Express",
             "NextJS API",
+            "Next-auth",
             "Prisma",
+            "Supabase",
             "Wordpress",
             "Strapi",
           ]}
         />
       </section>
 
-      <section>
-        <Project />
+      <section className={styles.projects} id="projects">
+        <Project
+          emphasedTitle="Paper"
+          title="Recipes"
+          description="A recipe sharing website I built using NextJS, Prisma and Supabase"
+          background="/paper-recipes.jpg"
+          projectUrl="https://paper-recipes.ovh"
+        />
+        <Project
+          emphasedTitle="Browsershot"
+          description="A chrome extension I made to make it easier to take elegant screenshot of web pages"
+          background="/browsershot.jpg"
+          projectUrl="https://chrome.google.com/webstore/detail/browsershot/bcbbjngkibonjfkndbmicdobedcdgmhk?hl=fr"
+        />
+      </section>
+
+      <section className={styles.contact} id="contact">
+        <p className={styles.contact__description}>
+          Do you have any question ? Would you like to work with me ?
+        </p>
+        <a
+          href="mailto:camille.charpentier77@gmail.com"
+          className={styles.contact__button}
+        >
+          Contact me
+        </a>
       </section>
     </>
   );
