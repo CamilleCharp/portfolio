@@ -64,3 +64,10 @@
   align-items: center;
   @apply text-sm;
 }
+
+@media (min-width: 768px) {
+  .menu__list {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}

@@ -1,27 +1,42 @@
 .about {
+  height: 100vh;
   display: flex;
   position: sticky;
   top: 0rem;
-  gap: 1rem;
-  padding: 1rem;
-  min-height: 100vh;
+  padding: 1rem 2rem;
   flex-direction: column;
+  gap: 1rem;
   justify-content: center;
+  align-items: center;
   z-index: 10;
   background-color: black;
+}
+
+.about__pic {
+  display: none;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 1rem;
+  padding: 1rem;
   font-family: var(--font-roboto);
-  @apply tracking-wide;
 
-  .about__title {
-    font-weight: bold;
-    text-align: center;
-    @apply text-lg tracking-widest;
-  }
+  @apply max-w-md;
+}
 
-  .about__presentation {
-    white-space: pre-line;
-    @apply text-sm;
-  }
+.about__title {
+  font-weight: bold;
+  text-align: center;
+  @apply text-lg tracking-widest;
+}
+
+.about__presentation {
+  white-space: pre-line;
+  @apply text-sm tracking-wide leading-relaxed;
 }
 
 .skills {
@@ -41,63 +56,6 @@
   font-weight: bold;
   letter-spacing: 3px;
   @apply text-lg;
-}
-
-.skill {
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  margin: 0 auto;
-  padding: 1rem;
-  color: var(--black);
-  border-radius: 8px;
-  @apply border border-gray-300;
-
-  .skill__title {
-    width: max-content;
-    display: flex;
-    gap: 0.25rem;
-    padding: 0.25rem 0.5rem;
-    background-color: var(--primary);
-    color: white;
-    border-radius: 8px;
-  }
-
-  .title__icon {
-    width: 24px;
-    height: 24px;
-    stroke: white;
-
-    background-color: transparent;
-  }
-
-  .title__name {
-    @apply tracking-wider;
-  }
-
-  .skill_description {
-    @apply text-sm  tracking-wide leading-relaxed;
-  }
-
-  .skill__content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .content__title {
-    color: var(--primary);
-    @apply tracking-normal;
-  }
-
-  .skill__list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    @apply text-sm font-medium;
-  }
 }
 
 .contact {
@@ -123,5 +81,28 @@
     background-color: var(--primary);
     border-radius: 8px;
     @apply tracking-widest;
+  }
+}
+
+@media (min-width: 768px) {
+  .about__pic {
+    width: 12rem;
+    display: block;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    overflow: hidden;
+
+    object-fit: cover;
+  }
+
+  .about__title {
+    text-align: left;
+  }
+}
+
+@media (min-width: 960px) {
+  .about {
+    flex-direction: row;
+    gap: 2rem;
   }
 }

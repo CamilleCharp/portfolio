@@ -10,7 +10,7 @@
   color: var(--black);
   border-radius: 8px;
   transition-duration: 500ms;
-  @apply border border-gray-300 max-w-sm;
+  @apply border border-gray-300 max-w-md;
 
   .skill__title {
     width: max-content;

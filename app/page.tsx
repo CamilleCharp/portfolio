@@ -1,5 +1,6 @@
 import styles from "./page.module.scss";
-import Link from "next/link";
+
+import PicOfMe from "@/public/me.jpg";
 
 import DesignIcon from "@/public/design.svg";
 import ServerIcon from "@/public/server.svg";
@@ -10,6 +11,7 @@ import HomeSection from "@/components/Home";
 import { Skill } from "@/components/Skills/Skill";
 import { Server } from "http";
 import { Project } from "@/components/Project/Project";
+import Image from "next/image";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -22,10 +24,14 @@ export default function Home() {
     <>
       <HomeSection />
       <section className={`${roboto.variable} ${styles.about}`} id="about">
-        <h1 className={styles.about__title}>About me</h1>
+        <div className={styles.about__pic}>
+          <Image src={PicOfMe} alt="A photo of me" />
+        </div>
+        <div className={styles.about__content}>
+          <h1 className={styles.about__title}>About me</h1>
 
-        <p className={styles.about__presentation}>
-          {`Hello and welcome to my corner of the internet ! I am a fullstack freelance webdev from Brussels.
+          <p className={styles.about__presentation}>
+            {`Hello and welcome to my corner of the internet ! I am a fullstack freelance webdev from Brussels.
 
           I aim to create website and webapp that are simple to use and maintain for both the final users and developpers. 
 
@@ -33,7 +39,8 @@ export default function Home() {
 
           This allows me to accompany you in your projects at every steps of your projects and make sure the product I deliver is as close as possible to your vision.
           `}
-        </p>
+          </p>
+        </div>
       </section>
       <section className={`${styles.skills} ${roboto.variable}`} id="skills">
         <h1 className={styles.skills__title}>What can I actually do ?</h1>

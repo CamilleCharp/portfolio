@@ -30,7 +30,7 @@ $item-height: 2.1rem;
     margin: auto;
     text-align: center;
     letter-spacing: 0.5rem;
-    @apply text-2xl leading-relaxed;
+    @apply text-2xl leading-loose;
   }
 }
 
@@ -53,6 +53,12 @@ $item-height: 2.1rem;
   & span:first-child {
     animation: text-animation 8s infinite;
     margin-top: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero__title {
+    display: flex;
   }
 }
 
