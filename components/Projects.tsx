@@ -7,7 +7,7 @@ export function Projects() {
       <Project
         emphasedTitle="Paper"
         title="Recipes"
-        description="A recipe sharing website I built using NextJS, Prisma and Supabase"
+        description="I built a recipe sharing website using Next.js, Prisma, and Supabase. The website is designed to allow users to easily share and discover new recipes, while also providing an opportunity for me to deepen my understanding of React and Next.js."
         background="/paper-recipes.jpg"
         projectUrl="https://paper-recipes.ovh"
       />
