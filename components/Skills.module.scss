@@ -1,0 +1,41 @@
+.skills {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+  z-index: 10;
+  gap: 1rem;
+  background-color: var(--background);
+}
+
+.skills__presentation {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 1rem;
+  @apply max-w-lg;
+}
+
+.skills__detail {
+  color: var(--white);
+  @apply max-w-lg leading-relaxed text-gray-400;
+}
+
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .skills {
+    justify-content: center;
+  }
+
+  .skills__list {
+    flex-direction: row;
+    gap: 0;
+    margin: 0 auto;
+  }
+}
