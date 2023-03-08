@@ -1,5 +1,5 @@
 import { Inter, Roboto } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--inter-font",
@@ -30,7 +30,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className} ${roboto.variable}`}>
       <body>
         <Header />
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main}>
+          {children} <Analytics />
+        </main>
       </body>
     </html>
   );
