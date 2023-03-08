@@ -9,7 +9,7 @@ export function Home() {
           <div className={styles.list}>
             <span className={styles.item}>Designer</span>
             <span className={styles.item}>Webdev</span>
-            <span className={styles.item}>Perfectionist</span>
+            <span className={styles.item}>Architect</span>
           </div>
         </h1>
       </div>
