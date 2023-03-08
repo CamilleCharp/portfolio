@@ -1,11 +1,6 @@
-"use client";
-
 import styles from "./Home.module.scss";
-import Link from "next/link";
 
-import { motion } from "framer-motion";
-
-export default function HomeSection() {
+export function Home() {
   return (
     <article className={`${styles.hero}`}>
       <div className={styles.hero__content}>
@@ -14,7 +9,7 @@ export default function HomeSection() {
           <div className={styles.list}>
             <span className={styles.item}>Designer</span>
             <span className={styles.item}>Webdev</span>
-            <span className={styles.item}>Perfectionnist</span>
+            <span className={styles.item}>Perfectionist</span>
           </div>
         </h1>
       </div>

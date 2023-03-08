@@ -34,6 +34,13 @@ body {
   background-color: #15202b;
 }
 
-.text-display {
-  font-family: "Roboto Slab", sans-serif, serif;
+.section-title {
+  color: var(--primary);
+  font-weight: bolder;
+  @apply text-lg;
+}
+
+.section-emphasis {
+  font-weight: bolder;
+  @apply text-4xl tracking-wider;
 }

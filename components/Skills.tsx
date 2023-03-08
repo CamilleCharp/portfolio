@@ -21,8 +21,8 @@ export function Skills() {
         <h2 className="section-emphasis">What can I actually do ?</h2>
         <span className={styles.skills__detail}>
           Knowing the theory is good, but knowing how to use the right tool for
-          the right job is the most important part, here are the language,
-          concepts and tools I know how to use the best
+          the right job is the most important part. Here are the languages,
+          concepts, and tools I know how to use the best.
         </span>
       </div>
 
@@ -30,9 +30,7 @@ export function Skills() {
         <Skill
           Icon={<DesignIcon />}
           title="Design"
-          description="My goal is to make design focused on interactivity, readability and
-            of course accessibility. All without sacrificing satisfying
-            animations."
+          description="My goal is to create designs focused on interactivity, readability, and accessibility, all without sacrificing satisfying animations."
           langTitle="What I like to design"
           langList={["UI", "Animations", "Prototypes"]}
           techTitle="Design tools"
@@ -42,7 +40,7 @@ export function Skills() {
         <Skill
           Icon={<CodeIcon />}
           title="Front-end"
-          description="I think a strong foundation is what make a website or application last in time"
+          description="I think a strong foundation is what makes a website or application last over time."
           langTitle="I fluently speak"
           langList={["HTML", "CSS", "SCSS", "Javascript", "Typescript"]}
           techTitle="Front techs I use"
@@ -59,7 +57,7 @@ export function Skills() {
         <Skill
           Icon={<ServerIcon />}
           title="Back-end"
-          description="Nowaday I mostly use node either with Express or more abstractly with Next Api routes. But I still enjoy using PHP and its clear structure"
+          description="Nowadays, I mostly use Node, either with Express or more abstractly with Next.js API routes. However, I still enjoy working with PHP and its clear structure."
           langTitle="For my back-ends I speak"
           langList={["PHP", "JS/TS", "Python"]}
           techTitle="Techs I use"

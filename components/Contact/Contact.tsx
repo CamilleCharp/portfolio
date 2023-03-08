@@ -10,8 +10,9 @@ export function Contact() {
           Need my skills on your next project ?
         </span>
         <p className={styles.contact__detail}>
-          I am currently available to help you on your project or to answer any
-          question you have. You can send me an email by filling this form.
+          I am currently available to help you with your project or to answer
+          any questions you may have. You can send me an email by filling out
+          this form.
         </p>
       </div>
       <ContactForm />
