@@ -1,0 +1,15 @@
+.section-title {
+  color: var(--primary);
+  font-weight: bolder;
+  @apply text-lg;
+}
+
+.section-emphasis {
+  font-weight: bolder;
+  @apply text-4xl tracking-wider;
+}
+
+.section__detail {
+  color: var(--white);
+  @apply max-w-lg leading-relaxed text-gray-400;
+}

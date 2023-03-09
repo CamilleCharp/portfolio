@@ -1,16 +1,14 @@
+import { HomeProps } from "@/types";
 import styles from "./Home.module.scss";
+import { RollingList } from "./Home/RollingList";
 
-export function Home() {
+export function Home({ content }: HomeProps) {
   return (
     <article className={`${styles.hero}`}>
       <div className={styles.hero__content}>
         <h1 className={styles.hero__title}>
-          <span>{"Hi! I'm Camille. I'm a"}</span>
-          <div className={styles.list}>
-            <span className={styles.item}>Designer</span>
-            <span className={styles.item}>Webdev</span>
-            <span className={styles.item}>Architect</span>
-          </div>
+          {content.presentationText}
+          <RollingList items={content.rollingItems} />
         </h1>
       </div>
     </article>

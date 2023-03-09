@@ -1,0 +1,56 @@
+$item-height: 2.1rem;
+
+.rollingList {
+  width: max-content;
+  height: 2.1rem;
+  margin: auto;
+
+  overflow: hidden;
+}
+
+.rollingList__item {
+  height: $item-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  padding: 0.25rem 0.5rem;
+
+  &:first-child {
+    animation: text-animation 8s infinite;
+    margin-top: 2rem;
+  }
+}
+
+@keyframes text-animation {
+  0% {
+    margin-top: 0;
+  }
+  10% {
+    margin-top: 0;
+  }
+  20% {
+    margin-top: $item-height * -1;
+  }
+  30% {
+    margin-top: $item-height * -1;
+  }
+  40% {
+    margin-top: $item-height * 2 * -1;
+  }
+  60% {
+    margin-top: $item-height * 2 * -1;
+  }
+  70% {
+    margin-top: $item-height * -1;
+  }
+  80% {
+    margin-top: $item-height * -1;
+  }
+  90% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 0;
+  }
+}

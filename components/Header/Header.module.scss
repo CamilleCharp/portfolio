@@ -1,6 +1,7 @@
+$headerHeight: 2.5rem;
+
 .header {
   width: 100%;
-
   position: fixed;
   top: 0;
 
@@ -8,18 +9,9 @@
   font-family: var(--font-header);
 }
 
-.header__container {
-  --header-height: 2.5rem;
-
-  width: 100%;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  gap: 0.5rem;
-}
 .header__background {
   width: 100%;
-  height: calc(var(--header-height) * 2);
+  height: calc($headerHeight * 2);
   position: absolute;
   z-index: -1;
   backdrop-filter: blur(12px);
@@ -32,9 +24,19 @@
   transform: translateY(0);
 }
 
-.baseBar {
+.header__container {
+  --header-height: 2.5rem;
+
   width: 100%;
-  height: var(--header-height);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navbar {
+  width: 100%;
+  height: $headerHeight;
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
@@ -45,8 +47,12 @@
   @apply text-lg;
 }
 
-.menu__icon {
-  width: 24px;
+.navbar__name--thin {
+  font-weight: 100;
+}
+
+.navbar__toggle-icon {
+  width: 2rem;
 }
 
 .menu {
@@ -72,25 +78,24 @@
   .menu__list {
     justify-content: flex-start;
     gap: 1rem;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 }
 
 @media (min-width: 960px) {
+  .header__background {
+    height: $headerHeight;
+    transform: translateY(0);
+  }
+
   .header__container {
     flex-direction: row;
     align-items: center;
     max-width: 960px;
     margin: auto;
-    padding: 1rem;
   }
 
-  .header__background {
-    height: var(--header-height);
-    transform: translateY(0);
-  }
-
-  .menu__button {
+  .navbar__toggle-button {
     display: none;
   }
 

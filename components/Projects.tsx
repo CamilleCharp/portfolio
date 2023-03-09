@@ -1,28 +1,28 @@
 import styles from "./Projects.module.scss";
 import { NewProject } from "./Project/NewProject";
+import { SectionTitle } from "./Text/SectionTitle";
+import { SectionEmphasis } from "./Text/SectionEmphasis";
+import { Project, ProjectsProps } from "@/types";
 
-export function Projects() {
+export function Projects({ content }: ProjectsProps) {
+  const ProjectsList = content.projects.map((project: Project, i: number) => (
+    <NewProject
+      key={`projects ${project?.emphasedTitle} ${i}`}
+      emphasedTitle={project?.emphasedTitle}
+      title={project?.title}
+      description={project.description}
+      background={project.background}
+      projectUrl={project.projectUrl}
+    />
+  ));
+
   return (
     <section className={styles.projects} id="projects">
       <div className={styles.project__presentation}>
-        <h1 className="section-title">My projects</h1>
-        <h2 className="section-emphasis">The latests projects I worked on</h2>
+        <SectionTitle>{content.title}</SectionTitle>
+        <SectionEmphasis>{content.emphasis}</SectionEmphasis>
       </div>
-      <div className={styles.projects__content}>
-        <NewProject
-          emphasedTitle="Paper"
-          title="Recipes"
-          description="A website I built to easily share recipes and deepen my knowledge of React/NextJS. It use NextAuth to handle authentication, and Supabase coupled with Prisma to manage datas"
-          background="/paper-recipes.jpg"
-          projectUrl="https://paper-recipes.ovh"
-        />
-        <NewProject
-          emphasedTitle="Browsershot"
-          description="A chrome extension I made to make it easier to take elegant screenshot of web pages"
-          background="/browsershot.jpg"
-          projectUrl="https://chrome.google.com/webstore/detail/browsershot/bcbbjngkibonjfkndbmicdobedcdgmhk?hl=fr"
-        />
-      </div>
+      <div className={styles.projects__content}>{ProjectsList}</div>
     </section>
   );
 }

@@ -3,6 +3,9 @@ import { Roboto_Condensed } from "next/font/google";
 import { useState } from "react";
 import MenuIcon from "../../public/menu.svg";
 import styles from "./Header.module.scss";
+import { HeaderBackground } from "./HeaderBackground";
+import { Menu } from "./Menu";
+import { Navbar } from "./Navbar";
 
 const roboto_condensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -10,52 +13,27 @@ const roboto_condensed = Roboto_Condensed({
   variable: "--font-header",
 });
 
+const menuItems = [
+  { name: "Home", anchor: "#" },
+  { name: "About", anchor: "#about" },
+  { name: "Skills", anchor: "#skills" },
+  { name: "Projects", anchor: "#projects" },
+  { name: "Contact", anchor: "#contact" },
+];
+
 export function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       <header className={`${roboto_condensed.variable} ${styles.header}`}>
+        <HeaderBackground isOpen={isMenuOpen} />
         <div className={styles.header__container}>
-          <div
-            className={`${styles.header__background} ${
-              isMenuOpen ? styles["header__background--open"] : ""
-            }`}
-          ></div>
-          <div className={styles.baseBar}>
-            <div>
-              <span>Camille</span> <span className="font-thin">Charp</span>
-            </div>
-            <button
-              className={styles.menu__button}
-              onClick={() => setMenuOpen(!isMenuOpen)}
-            >
-              <MenuIcon className={styles.menu__icon} />
-            </button>
-          </div>
-          <nav
-            className={`${styles.menu} ${
-              isMenuOpen ? styles["menu--open"] : ""
-            }`}
-          >
-            <ul className={styles.menu__list}>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#skills">Skills</a>
-              </li>
-              <li>
-                <a href="#projects">Projects</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
+          <Navbar
+            isOpen={isMenuOpen}
+            toggleMenu={() => setMenuOpen(!isMenuOpen)}
+          />
+          <Menu items={menuItems} isOpen={isMenuOpen} />
         </div>
       </header>
     </>

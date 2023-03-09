@@ -30,17 +30,6 @@ html {
 
 body {
   width: 100%;
-
+  overflow-x: hidden;
   background-color: #15202b;
-}
-
-.section-title {
-  color: var(--primary);
-  font-weight: bolder;
-  @apply text-lg;
-}
-
-.section-emphasis {
-  font-weight: bolder;
-  @apply text-4xl tracking-wider;
 }

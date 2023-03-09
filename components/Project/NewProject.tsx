@@ -3,18 +3,20 @@
 import styles from "./NewProject.module.scss";
 import { Roboto_Condensed } from "next/font/google";
 import Image from "next/image";
+import { Project } from "@/types";
 
 const roboto_condensed = Roboto_Condensed({
   subsets: ["latin"],
   weight: ["300", "700"],
 });
+
 export function NewProject({
   emphasedTitle,
   title,
   description,
   projectUrl = "#",
   background,
-}: any) {
+}: Project) {
   return (
     <div className={styles.project}>
       <a href={projectUrl}>

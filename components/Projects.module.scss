@@ -11,6 +11,11 @@
   background-color: #0e161d;
 }
 
+.project__presentation {
+  display: flex;
+  flex-direction: column;
+}
+
 .projects__content {
   display: flex;
 
