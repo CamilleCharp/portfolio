@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 // Biggest components interface
 interface HomeProps {
@@ -80,5 +80,5 @@ interface FormLabels {
 // Smallest components interfaces
 
 interface StylingComponent {
-    children: ReactElement
+    children: ReactNode
 }
