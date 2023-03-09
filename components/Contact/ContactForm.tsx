@@ -25,9 +25,9 @@ export function ContactForm() {
     const message = target.message.value;
 
     const mailData = {
-      service_id: "service_i4ebs0r",
-      template_id: "template_wmyhdgf",
-      user_id: "IWJcAAHnn7CLxFKbj",
+      service_id: process.env.NEXT_PUBLIC_MAIL_SERVICE_ID,
+      template_id: process.env.NEXT_PUBLIC_MAIL_TEMPLATE_ID,
+      user_id: process.env.NEXT_PUBLIC_MAIL_USER_ID,
       template_params: {
         user_name: username,
         user_email: email,
