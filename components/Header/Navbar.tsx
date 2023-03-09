@@ -29,5 +29,3 @@ export function Navbar({ isOpen, toggleMenu }: Props) {
     </div>
   );
 }
-
-// () => setMenuOpen(!isMenuOpen)
