@@ -17,7 +17,7 @@ export function Menu({ items, isOpen }: Props) {
 
   const menuItems = items.map((item: Item, i: number) => (
     <li key={`${item.name} ${i}`}>
-      <a href={`#${item.anchor}`}>{item.name}</a>
+      <a href={`${item.anchor}`}>{item.name}</a>
     </li>
   ));
 
